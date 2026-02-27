@@ -10,6 +10,8 @@ const session = require('express-session');
 const bcrypt = require('bcryptjs');
 const path = require('path');
 
+const sanitizeHtml = require('sanitize-html');
+
 const app = express();
 
 
@@ -71,68 +73,38 @@ app.get('/api', (req, res) => {
 const saltRounds = 10;
 
 app.post('/api/register', async (req, res) => {
-    const { username, email, password } = req.body;
-
-    if (!username || !email || !password) {
-        return res.status(400).json({
-            success: false,
-            message: "All fields are required"
-        });
-    }
-
     try {
-        // Check if email already exists
-        const checkSql = "SELECT * FROM users WHERE email = ?";
-        db.query(checkSql, [email], async (err, results) => {
-            if (err) {
-                console.error(err);
-                return res.status(500).json({
-                    success: false,
-                    message: "Database error"
-                });
-            }
+        let { username, email, password } = req.body;
 
-            if (results.length > 0) {
-                return res.json({
-                    success: false,
-                    message: "Email already registered"
-                });
-            }
+        if (!username || !email || !password) {
+            return res.status(400).json({ success: false, message: "All fields are required" });
+        }
 
-            // Hash password
-            const hashedPassword = await bcrypt.hash(password, saltRounds);
+        // Sanitize and trim
+        username = sanitizeHtml(username.trim(), { allowedTags: [], allowedAttributes: {} });
+        email = sanitizeHtml(email.trim().toLowerCase(), { allowedTags: [], allowedAttributes: {} });
+        password = password.trim();
 
-            const insertSql = `
-                INSERT INTO users (username, email, password, role, created_at)
-                VALUES (?, ?, ?, ?, NOW())
-            `;
+        // Check email exists
+        const [rows] = await db.promise().query("SELECT * FROM users WHERE email = ?", [email]);
+        if (rows.length > 0) {
+            return res.status(409).json({ success: false, message: "Email already registered" });
+        }
 
-            db.query(
-                insertSql,
-                [username, email, hashedPassword, 'student'],
-                (err, result) => {
-                    if (err) {
-                        console.error(err);
-                        return res.status(500).json({
-                            success: false,
-                            message: "Failed to register"
-                        });
-                    }
+        // Hash password
+        const hashedPassword = await bcrypt.hash(password, saltRounds);
 
-                    res.json({
-                        success: true,
-                        message: "User registered successfully"
-                    });
-                }
-            );
-        });
+        // Insert user
+        await db.promise().query(
+            "INSERT INTO users (username, email, password, role, created_at) VALUES (?, ?, ?, ?, NOW())",
+            [username, email, hashedPassword, 'student']
+        );
 
-    } catch (error) {
-        console.error(error);
-        res.status(500).json({
-            success: false,
-            message: "Server error"
-        });
+        res.json({ success: true, message: "User registered successfully" });
+
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ success: false, message: "Server error" });
     }
 });
 

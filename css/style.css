@@ -1049,6 +1049,7 @@ textarea {
 .btn.primary {
     background: #007bff;
     color: white;
+    font-weight: 600;
     padding: 10px 18px;
     border-radius: 8px;
     border: none;
@@ -1174,4 +1175,93 @@ textarea {
     font-size: 14px;
     color: #d9534f; 
     margin-top: 10px;
+}
+
+/* ===== PROFILE PAGE CONTAINER ===== */
+.profile-container {
+    max-width: 450px;
+    margin: 60px auto;
+    padding: 30px 25px 50px;
+    background: linear-gradient(135deg, #f0f4ff, #ffffff);
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Page Title */
+.profile-container h2 {
+    margin-bottom: 25px;
+    font-size: 24px;
+    font-weight: 700;
+    color: black;
+    z-index: 1;
+    position: relative;
+}
+
+/* User Info Cards */
+#profileInfo {
+    text-align: left;
+    padding: 0 20px;
+}
+
+#profileInfo p {
+    font-size: 16px;
+    margin: 12px 0;
+    line-height: 1.6;
+    background: #f8faff;
+    padding: 10px 15px;
+    border-radius: 10px;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.03);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#profileInfo p strong {
+    color: black;
+}
+
+/* Logout Button */
+.profile-actions {
+    margin-top: 30px;
+}
+
+.user-logout-btn {
+    background:#0b2b83;
+    color: #fff;
+    border: none;
+    padding: 12px 30px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.user-logout-btn:hover {
+    background: #091c50;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+/* Responsive adjustments */
+@media (max-width: 500px) {
+    .profile-container {
+        margin: 40px 15px;
+        padding: 25px 15px 40px;
+    }
+
+    .profile-avatar {
+        width: 80px;
+        height: 80px;
+        margin: -50px auto 15px;
+    }
+
+    .user-logout-btn {
+        width: 100%;
+    }
 }

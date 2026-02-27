@@ -7,10 +7,23 @@ document.getElementById('registerForm').addEventListener('submit', async (e) => 
     const confirmPassword = document.getElementById('confirmPassword').value;
     const statusMessage = document.getElementById('statusMessage');
 
-    // Simple validation
+    // ===== Validation =====
+    // Password must length >= 8
+    if (password.length < 8) {
+        alert("Password must be at least 8 characters!");
+        return;
+    }
+
+    // Confirm password match
     if (password !== confirmPassword) {
-        statusMessage.textContent = "Passwords do not match!";
-        statusMessage.style.color = "red";
+        alert("Passwords do not match!");
+        return;
+    }
+
+    // Email must be @qiu.edu.my
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@qiu\.edu\.my$/;
+    if (!emailPattern.test(email)) {
+        alert("Email must be a valid @qiu.edu.my address!");
         return;
     }
 
