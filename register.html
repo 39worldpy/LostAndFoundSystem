@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register | Campus Lost & Found</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="js/register.js"></script>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <h1 class="logo">Campus Lost & Found</h1>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="items.html">Items</a></li>
+                <li><a href="report.html">Report</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="register.html" class="active">Register</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main class="login-register-container">
+
+    <h2 style="margin: 30px 0;">Create a New Account</h2>
+
+    <form id="registerForm" class="register-form">
+        <div class="login-register-form-group">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" placeholder="Your full name" required>
+        </div>
+
+        <div class="login-register-form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Your email" required>
+        </div>
+
+        <div class="login-register-form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter password" required>
+        </div>
+
+        <div class="login-register-form-group">
+            <label for="confirmPassword">Confirm Password:</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm password" required>
+        </div>
+
+        <button type="submit" class="btn primary">Register</button>
+
+        <p style="margin-top: 15px;">Already have an account? <a href="login.html">Login here</a></p>
+
+        <p id="statusMessage" style="margin-top: 15px;"></p>
+    </form>
+
+</main>
+
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All Items | Campus Lost & Found</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script defer src="js/main.js"></script>
+
+    <script defer src="js/items.js"></script>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <h1 class="logo">Campus Lost & Found</h1>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="items.html"  class="active" >Items</a></li>
+                <li><a href="report.html">Report</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+                <li id="loginNav"><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main class="container items-page">
+
+    <h2 style="margin: 30px 0;">All Items</h2>
+
+    <!-- ===== FILTER SECTION ===== -->
+    <section class="filter-section">
+
+        <div class="filter-group">
+            <label for="categoryFilter">Category:</label>
+            <select id="categoryFilter">
+                <option value="">All</option>
+                <option value="Lost">Lost</option>
+                <option value="Found">Found</option>
+            </select>
+        </div>
+
+        <div class="filter-group">
+            <label for="statusFilter">Status:</label>
+            <select id="statusFilter">
+                <option value="">All</option>
+                <option value="Active">Active</option>
+                <option value="Claimed">Claimed</option>
+                <option value="Resolved">Resolved</option>
+            </select>
+        </div>
+
+        <div class="filter-group">
+            <label for="searchInput">Search:</label>
+            <input type="text" id="searchInput" placeholder="Search by title...">
+        </div>
+    
+        <button id="applyFilterBtn" class="items-filter-btn">Filter</button>
+    </section>
+
+    <!-- ===== ITEM LIST SECTION ===== -->
+    <section id="itemsContainer" class="items-grid">
+        <!-- Dynamic cards will be inserted here by items.js -->
+    </section>
+</main>
+
+<!-- Image Modal -->
+<div id="imageModal" class="image-modal">
+    <span class="close-modal">&times;</span>
+    <img class="modal-content" id="modalImg">
+</div>
+
+</body>
+</html>

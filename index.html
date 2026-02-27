@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Campus Lost & Found</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="js/main.js"></script>
+    <script defer src="js/home.js"></script>
+</head>
+
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <div class="container">
+            <h1 class="logo">Campus Lost & Found</h1>
+
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active" >Home</a></li>
+                    <li><a href="items.html">Items</a></li>
+                    <li><a href="report.html">Report</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                    <li id="loginNav"><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Lost Something? Found Something?</h2>
+            <p>
+                Report and track lost & found items easily through our secure
+                campus management system.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="report.html" class="main-page-btn">Submit Report</a>
+                <a href="items.html" class="main-page-btn">View Items</a>
+            </div>
+        </div>
+    </section>
+
+<!-- ===== ABOUT SECTION ===== -->
+<section class="main-page-2">
+    <div class="main-page-2-container">
+
+        <div class="info-section">
+            <div class="info-text">
+                <h3>How It Works</h3>
+                <ul>
+                    <li>📝 Submit a report in 1 minute</li>
+                    <li>🔎 Search for matching items</li>
+                    <li>📩 Get notified when someone finds your item</li>
+                </ul>
+            </div>
+            <div class="info-image">
+                <img src="media/feature.png" alt="How It Works">
+            </div>
+        </div>
+
+        <div class="info-section">
+            <div class="info-image">
+                <img src="media/database.jpg" alt="Why Use This System">
+            </div>
+            <div class="info-text">
+                <h3>Why Use This System?</h3>
+                <ul>
+                    <li>Centralized database</li>
+                    <li>Easy tracking of item status</li>
+                    <li>Faster response from security office</li>
+                    <li>Secure and verified reports</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="main-page-3">
+    <div class="main-page-3-container">
+        <h3>Recently Found</h3>
+        <div id="foundCards" class="main-page-3-cards">
+            <!-- Found items will be appended here from JS -->
+        </div>
+    </div>
+
+    <div class="main-page-3-container">
+        <h3>Recently Lost</h3>
+        <div id="lostCards" class="main-page-3-cards">
+            <!-- Lost items will be appended here from JS -->
+        </div>
+    </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-contact">
+            <h4>Contact Us</h4>
+            <p>Quest International University</p>
+            <p>Email: <a href="mailto:enquiries@qiu.edu.my">enquiries@qiu.edu.my</a></p>
+            <p>Phone: 019-830 0881</p>
+            <p>No.227, Plaza Teh Teng Seng, Jalan Raja Permaisuri Bainun, Ipoh, Malaysia, 31250</p>
+        </div>
+
+        <div class="footer-social">
+            <h4>Follow Us</h4>
+            <a href="https://www.facebook.com/QuestInternationalUniversityOfficial" target="_blank" class="social-link">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.instagram.com/questinternationaluniversity/" target="_blank" class="social-link">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.linkedin.com/school/questinternationaluniversity/" target="_blank" class="social-link">
+                <i class="fab fa-linkedin"></i>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2026 Quest International University. All Rights Reserved.</p>
+    </div>
+</footer>
+
+</body>
+</html>
