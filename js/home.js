@@ -32,7 +32,10 @@ document.addEventListener('DOMContentLoaded', async () => {
             card.className = 'main-page-3-card';
 
             card.innerHTML = `
-                <img src="/images/${item.image || ''}" alt="${item.title}">
+                <img src="/images/${item.image || ''}" 
+                alt="${item.title}" 
+                loading="lazy">
+                
                 <div class="card-body">
                     <p class="card-title">${item.title}</p>
                     <span class="card-status ${item.status.toLowerCase()}">${item.status}</span>

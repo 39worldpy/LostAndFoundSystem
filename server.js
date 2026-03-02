@@ -7,9 +7,10 @@ require('dotenv').config();
 const express = require('express');
 const mysql = require('mysql2');
 const session = require('express-session');
-const bcrypt = require('bcryptjs');
-const path = require('path');
 
+const bcrypt = require('bcryptjs');
+
+const path = require('path');
 const sanitizeHtml = require('sanitize-html');
 
 const app = express();
