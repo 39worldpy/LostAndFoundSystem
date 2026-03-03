@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     container.innerHTML = '';
 
     items.forEach(item => {
+
         const card = document.createElement('div');
         card.className = 'items-page item-card';
 
@@ -63,7 +64,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     }
-
 
     function applyFilter() {
 
