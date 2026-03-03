@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const container = document.getElementById('myhistoryContainer');
 
     async function fetchMyItems() {
+        
         try {
             const res = await fetch('/api/my-items');
             const items = await res.json();
