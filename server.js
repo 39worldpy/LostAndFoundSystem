@@ -161,6 +161,7 @@ app.get('/api/logout', (req, res) => {
 
 //Fetch item / Display
 app.get('/api/items', (req, res) => {
+    
     const query = `
         SELECT id, image, title, description, category, location, date, contact_info, status, submitted_by
         FROM items
