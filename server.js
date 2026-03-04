@@ -285,6 +285,37 @@ app.delete('/api/items/:id', (req, res) => {
     });
 });
 
+// POST route for submitting feedback
+app.post('/api/feedback', (req, res) => {
+    console.log(req.body);
+
+    const { name, email, feedback } = req.body;
+
+    if (!name || !email || !feedback) {
+        return res.status(400).json({ success: false, message: 'All fields are required' });
+    }
+
+    const sql = `
+        INSERT INTO feedback (username, email, feedback_content)
+        VALUES (?, ?, ?)
+    `;
+
+    const values = [name, email, feedback];
+
+    db.query(sql, values, (err, result) => {
+        if (err) {
+            console.error(err);
+            return res.status(500).json({ success: false, message: 'Database error' });
+        }
+
+        res.json({ 
+            success: true, 
+            feedbackId: result.insertId, 
+            message: 'Feedback submitted successfully' 
+        });
+    });
+});
+
 // ----- 404 Handler -----
 app.use((req, res, next) => {
     res.status(404).send('Page not found');
