@@ -17,7 +17,7 @@ document.getElementById('reportForm').addEventListener('submit', async (e) => {
             alert('Report submitted successfully!');
             form.reset();
         } else {
-            alert('Failed to submit report.');
+            alert(result.message || 'Error submitting item.');
         }
     } catch (err) {
         console.error(err);
