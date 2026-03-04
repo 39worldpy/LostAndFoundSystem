@@ -633,6 +633,49 @@ header .container {
     color: #007bff;
 }
 
+/* ===== Mobile Responsive Design ===== */
+@media (max-width: 1200px) {
+    .items-page .items-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+    }
+}
+
+@media (max-width: 992px) {
+    .items-page .items-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+    }
+}
+
+@media (max-width: 576px) {
+    .items-page .items-grid {
+        grid-template-columns: 1fr; /* 1 card per row */
+        gap: 15px;
+    }
+
+    .items-page .card-title {
+        font-size: 15px;
+    }
+
+    .items-page .card-category {
+        font-size: 12px;
+    }
+
+    .items-page .card-details p,
+    .items-page .card-contact,
+    .items-page .card-user {
+        font-size: 13px;
+    }
+
+    .items-page .card-image {
+        height: 150px;
+    }
+
+    .items-page .status-badge {
+        padding: 4px 8px;
+        font-size: 11px;
+    }
+}
+
 /* ===== Filter section ===== */
 .items-page .filter-section {
     display: flex;
@@ -872,7 +915,53 @@ header .container {
     font-size: 14px;
 }
 
+/* ===== Mobile Responsive for MyHistory Cards ===== */
+@media (max-width: 1200px) {
+    .myhistory-page .myhistory-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+    }
+}
 
+@media (max-width: 992px) {
+    .myhistory-page .myhistory-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+    }
+}
+
+@media (max-width: 576px) {
+    .myhistory-page .myhistory-grid {
+        grid-template-columns: 1fr; /* 1 card per row */
+        gap: 15px;
+    }
+
+    .myhistory-page .card-title {
+        font-size: 15px;
+    }
+
+    .myhistory-page .card-category {
+        font-size: 12px;
+    }
+
+    .myhistory-page .card-details p,
+    .myhistory-page .card-contact,
+    .myhistory-page .card-user {
+        font-size: 13px;
+    }
+
+    .myhistory-page .card-image {
+        height: 150px;
+    }
+
+    .myhistory-page .status-badge {
+        padding: 4px 8px;
+        font-size: 11px;
+    }
+
+    .myhistory-page .status-select {
+        font-size: 13px;
+        padding: 5px 8px;
+    }
+}
 
 /* ===== Report Form Page ===== */
 .report-form-container {
@@ -1080,10 +1169,44 @@ textarea {
     line-height: 1.6;
 }
 
-/* RESPONSIVE (Mobile) */
 @media (max-width: 900px) {
     .feedback-container {
         flex-direction: column;
+        gap: 25px;
+    }
+
+    .feedback-left,
+    .feedback-right {
+        width: 100%;
+    }
+
+    .feedback-form {
+        padding: 20px;
+    }
+
+    .feedback-right {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .form-group input,
+    .form-group textarea {
+        font-size: 13px;
+        padding: 8px 10px;
+    }
+
+    .btn.primary {
+        padding: 8px 14px;
+        font-size: 14px;
+    }
+
+    .feedback-form h2 {
+        font-size: 20px;
+    }
+
+    .feedback-right h3 {
+        font-size: 18px;
     }
 }
 
@@ -1248,7 +1371,6 @@ textarea {
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
 }
 
-/* Responsive adjustments */
 @media (max-width: 500px) {
     .profile-container {
         margin: 40px 15px;
