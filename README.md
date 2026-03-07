@@ -36,14 +36,29 @@ The system digitalizes the traditional manual process (notice boards and WhatsAp
 ### Version Control
 - Git & GitHub
 
-### Deployment
-- GitHub Pages (Static Frontend Hosting)
+### Live Demo (Frontend Only)
 
----
-
-##Live Demo
-
-Live URL:  
+### Live URL:
 https://39worldpy.github.io/LostAndFoundSystem/
 
----
+Note:
+GitHub Pages only hosts the static frontend interface.
+Backend functionalities such as login, database operations, and item submission require the system to run on Localhost.
+
+Run Locally (Full System)
+
+To run the complete system with backend and database:
+
+Install dependencies
+
+npm install
+
+Start the server
+
+node server.js
+
+Open browser and visit
+
+http://localhost:3000/index.html
+
+Make sure MySQL (XAMPP) is running before starting the server.
